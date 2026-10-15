@@ -1,6 +1,6 @@
 # 客户端源码与构建
 
-客户端对应源码位于 `client/`。1.6.30 Release 的 `leke-1.6.30-client-source.zip` 是包含语音模型的完整源码包；服务端独立维护，不在此仓库分发。
+客户端对应源码位于 `client/`。1.6.31 Release 的 `leke-1.6.31-client-source.zip` 是包含语音模型的完整源码包；服务端独立维护，不在此仓库分发。
 
 ## Windows 开发环境
 

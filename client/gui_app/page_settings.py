@@ -12,7 +12,7 @@ import sys
 import threading
 
 from PySide6.QtCore import Qt, QUrl, Signal
-from PySide6.QtGui import QDesktopServices
+from PySide6.QtGui import QDesktopServices, QPixmap
 from PySide6.QtWidgets import (
     QCheckBox, QComboBox, QDoubleSpinBox, QGridLayout, QHBoxLayout, QLabel, QLineEdit,
     QMenu, QPushButton, QScrollArea, QSpinBox, QStackedWidget, QVBoxLayout, QWidget,
@@ -102,6 +102,58 @@ def _row(*pairs) -> QGridLayout:
     return g
 
 
+class SupportPage(QWidget):
+    """自愿支持页面；无支付检测、功能门槛或联网请求。"""
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        root = QVBoxLayout(self)
+        root.setContentsMargins(0, 0, 0, 0)
+        inner = QWidget()
+        layout = QVBoxLayout(inner)
+        layout.setContentsMargins(0, 0, 8, 0)
+        layout.setSpacing(16)
+        promise = Card("乐课承诺 · 永久免费", icon="check")
+        title = QLabel("好用，就继续免费用。")
+        title.setStyleSheet("color:#2448AA;font-size:24px;font-weight:700;")
+        title.setWordWrap(True)
+        promise.add(title)
+        text = QLabel("乐课软件永久免费使用。支持作者完全自愿，不支持也可以正常使用全部功能，"
+                      "不会因支持金额改变功能或使用权限。")
+        text.setWordWrap(True)
+        promise.add(text)
+        layout.addWidget(promise)
+        support = Card("支持作者", "如果乐课帮到了你，可以自愿请作者喝杯奶茶。感谢每一份支持。")
+        image = QLabel()
+        image.setAlignment(Qt.AlignCenter)
+        image.setAccessibleName("作者提供的微信收款码")
+        image_path = os.path.join(store.resource_dir(), "resource", "support_wechat.png")
+        pixmap = QPixmap(image_path)
+        if pixmap.isNull():
+            image.setText("收款码暂时无法显示，你仍可免费使用乐课全部功能。")
+            image.setWordWrap(True)
+        else:
+            image.setPixmap(pixmap.scaled(280, 382, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        support.add(image)
+        caption = QLabel("微信扫码 · 金额随意 · 完全自愿")
+        caption.setAlignment(Qt.AlignCenter)
+        caption.setObjectName("CardHint")
+        support.add(caption)
+        original = QPushButton("查看原始收款码")
+        original.setEnabled(not pixmap.isNull())
+        original.setToolTip("在系统图片查看器打开原图，方便扫码")
+        original.clicked.connect(lambda: QDesktopServices.openUrl(QUrl.fromLocalFile(image_path)))
+        support.body.addWidget(original, 0, Qt.AlignCenter)
+        layout.addWidget(support)
+        note = QLabel("免费承诺适用于乐课软件本身；自行配置的第三方模型、题库等服务，"
+                      "如产生费用，由对应服务商收取，与支持作者无关。")
+        note.setObjectName("CardHint")
+        note.setWordWrap(True)
+        layout.addWidget(note)
+        layout.addStretch(1)
+        root.addWidget(_scroll(inner))
+
+
 class SettingsPage(QWidget):
     sig_kb_status = Signal(str)
     sig_diagnostics = Signal(list)
@@ -113,7 +165,7 @@ class SettingsPage(QWidget):
         root.setContentsMargins(0, 0, 0, 0)
         root.setSpacing(14)
 
-        self.seg = SegmentedBar(["运行参数", "题库", "高级"])
+        self.seg = SegmentedBar(["运行参数", "题库", "高级", "支持作者"])
         root.addWidget(self.seg)
 
         self.stack = QStackedWidget()
@@ -122,6 +174,7 @@ class SettingsPage(QWidget):
         self._build_basic()
         self._build_tiku()
         self._build_advanced()
+        self.stack.addWidget(SupportPage())
         self.sig_diagnostics.connect(self._show_diagnostics)
         self.seg.sig_changed.connect(self.stack.setCurrentIndex)
         self.seg.sig_changed.connect(self._remember_tab)
@@ -130,7 +183,7 @@ class SettingsPage(QWidget):
             last = int(store.ui_load().get("settings_tab", 0))
         except (TypeError, ValueError):
             last = 0
-        if 0 <= last < 3:
+        if 0 <= last < self.stack.count():
             self.seg.set_index(last)
 
         bottom = QHBoxLayout()
@@ -147,11 +200,17 @@ class SettingsPage(QWidget):
         bottom.addWidget(self.badge)
         bottom.addWidget(self.lb_result, 1)
         root.addLayout(bottom)
+        self.seg.sig_changed.connect(self._toggle_save_controls)
+        self._toggle_save_controls(self.stack.currentIndex())
 
         #: 加载期间屏蔽「未保存」标记（load() 里逐个 setValue 会触发 changed）
         self._loading = False
         self.load()
         self._wire_dirty()
+
+    def _toggle_save_controls(self, index):
+        for widget in (self.btn_save, self.badge, self.lb_result):
+            widget.setVisible(index != 3)
 
     def _wire_dirty(self):
         """任何输入变化 → 徽标改「未保存」，避免改完切页静默丢失（v1.5.7）。

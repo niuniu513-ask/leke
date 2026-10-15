@@ -288,37 +288,16 @@ class ProfilePage(QWidget):
 
     def _open_support(self):
         """支持作者：弹微信收款码。软件免费，扫码转账全凭自愿。"""
-        from gui_app.store import resource_dir
+        from gui_app.page_settings import SupportPage
 
         dlg = QDialog(self)
-        dlg.setWindowTitle("支持作者")
+        dlg.setWindowTitle("支持作者 · 乐课永久免费")
+        dlg.resize(560, 760)
         root = QVBoxLayout(dlg)
-        root.setSpacing(12)
-
-        head = QLabel("乐课完全免费 · 如果觉得好用，请作者喝杯奶茶")
-        head.setWordWrap(True)
-        root.addWidget(head)
-
-        pm = QPixmap(os.path.join(resource_dir(), "support_wechat.png"))
-        img = QLabel()
-        img.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        if not pm.isNull():
-            img.setPixmap(pm.scaledToHeight(360, Qt.TransformationMode.SmoothTransformation))
-        else:
-            img.setText("（收款码图片缺失）")
-        root.addWidget(img)
-
-        tip = QLabel("微信扫码转账 · 金额随意 · 不影响任何功能")
-        tip.setObjectName("CardHint")
-        tip.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        root.addWidget(tip)
-
-        btns = QHBoxLayout()
-        btns.addStretch(1)
-        close = QPushButton("关闭")
+        root.addWidget(SupportPage(dlg))
+        close = QPushButton("继续免费使用")
         close.clicked.connect(dlg.accept)
-        btns.addWidget(close)
-        root.addLayout(btns)
+        root.addWidget(close)
         dlg.exec()
 
     # ================================================================ 网络

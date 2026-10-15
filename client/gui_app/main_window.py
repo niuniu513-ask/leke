@@ -240,12 +240,26 @@ class MainWindow(QMainWindow):
         # 将空余高度分给品牌标签与导航按钮、把整个侧栏拉散。
         lay.addWidget(self.nav)
         lay.addStretch(1)
+        self.btn_support_author = QPushButton("♡  支持作者 · 永久免费")
+        self.btn_support_author.setMinimumHeight(40)
+        self.btn_support_author.setToolTip("自愿支持作者，不影响任何功能或使用权限")
+        self.btn_support_author.setStyleSheet(
+            "QPushButton { background:#EEF3FF; color:#2448AA; border:1px solid #CCD9FF;"
+            "border-radius:10px; font-weight:600; padding:8px; }"
+            "QPushButton:hover { background:#E2EBFF; border-color:#7F9FEF; }"
+            "QPushButton:focus { border:2px solid #345FE5; }")
+        self.btn_support_author.clicked.connect(self._show_support_author)
+        lay.addWidget(self.btn_support_author)
         self.btn_export_diagnostic = QPushButton('导出诊断')
         self.btn_export_diagnostic.setToolTip('导出当前工作区状态和数量，不包含凭据、课程内容或日志。')
         self.btn_export_diagnostic.clicked.connect(self._export_diagnostic)
         lay.addWidget(self.btn_export_diagnostic)
         self.sidebar = side
         return side
+
+    def _show_support_author(self):
+        self.goto("settings")
+        self.settings_page.seg.set_index(3)
 
     def _export_diagnostic(self):
         filename, _ = QFileDialog.getSaveFileName(self, '保存工作区诊断',

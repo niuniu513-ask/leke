@@ -8,7 +8,7 @@ Windows 桌面课程学习助手，集中管理学习通、雨课堂、智慧树
 
 ## 真实界面截图
 
-以下为 1.6.30 客户端实际运行界面，使用隔离的空白账号环境；未展示真实课程、个人账号或完成记录。
+以下为客户端实际运行界面（工作区为 1.6.30，支持作者页为 1.6.31），使用隔离的空白账号环境；未展示真实课程、个人账号或完成记录。
 
 ### 学习通任务工作台
 
@@ -26,6 +26,12 @@ Windows 桌面课程学习助手，集中管理学习通、雨课堂、智慧树
 
 ![AI 与答题设置](docs/screenshots/ai-settings.png)
 
+### 支持作者 · 永久免费
+
+设置页或侧栏底部可打开支持作者页面。微信扫码完全自愿，不支持也可正常使用全部功能。软件本身永久免费，自行配置的第三方服务费用以服务商为准。
+
+![支持作者与免费承诺](docs/screenshots/support-author.png)
+
 ## 下载与使用
 
 1. 从 [Releases](https://github.com/niuniu513-ask/leke/releases/latest) 下载 `leke-版本号-win-x64.exe`，适用于 Windows x64。
@@ -38,7 +44,7 @@ Windows 桌面课程学习助手，集中管理学习通、雨课堂、智慧树
 1.6.30 起随正式发布提供 `SHA256SUMS.txt`；旧版本如未附校验文件，可参考 GitHub Release 附件的摘要。校验示例：
 
 ```powershell
-Get-FileHash .\leke-1.6.30-win-x64.exe -Algorithm SHA256
+Get-FileHash .\leke-1.6.31-win-x64.exe -Algorithm SHA256
 ```
 
 对照当前 Release 的校验值；校验值用于确认下载文件一致，不能替代发布者数字签名。不要使用第三方重新打包或所谓破解版。
@@ -83,7 +89,7 @@ Get-FileHash .\leke-1.6.30-win-x64.exe -Algorithm SHA256
 
 客户端的第三方声明载明：学习通核心基于 GPL-3.0 项目，U校园引擎基于 AGPL-3.0 项目。因此原 README 对整个客户端作“闭源、保留所有权利”的表述不准确，对应源码分发需遵守实际适用的上游许可。
 
-客户端源码见 [client/](client/)，运行和构建步骤见 [SOURCE_BUILD.md](SOURCE_BUILD.md)。[1.6.30 Release](https://github.com/niuniu513-ask/leke/releases/tag/v1.6.30) 同时提供 EXE、完整对应源码包及 SHA-256 校验文件。Git 目录省略超过 100 MB 的语音模型文件，完整源码包保留该文件。服务端源码、账号、Cookie、私有密钥及运行数据不在公开交付范围内。
+客户端源码见 [client/](client/)，运行和构建步骤见 [SOURCE_BUILD.md](SOURCE_BUILD.md)。[1.6.31 Release](https://github.com/niuniu513-ask/leke/releases/tag/v1.6.31) 同时提供 EXE、完整对应源码包及 SHA-256 校验文件。Git 目录省略超过 100 MB 的语音模型文件，完整源码包保留该文件。服务端源码、账号、Cookie、私有密钥及运行数据不在公开交付范围内。
 
 软件还使用 PySide6、浏览器自动化、语音处理及其他第三方组件。许可证与声明随新安装包附带；第三方组件按各自许可证使用。
 
