@@ -4,7 +4,27 @@ Windows 桌面课程学习助手，集中管理学习通、雨课堂、智慧树
 
 [下载最新版](https://github.com/niuniu513-ask/leke/releases/latest) · [用户中心](https://kc-api.lifedays.site/) · [反馈问题](https://github.com/niuniu513-ask/leke/issues) · [安全说明](SECURITY.md)
 
-> **完全免费。** 本仓库用于项目介绍、版本下载与问题反馈。注册登录用于乐课账号、设备管理与云端题库访问。源码与第三方许可说明见下文。
+> **完全免费。** 本仓库提供客户端源码、版本下载与问题反馈。注册登录用于乐课账号、设备管理与云端题库访问。源码与第三方许可说明见下文。
+
+## 真实界面截图
+
+以下为 1.6.30 客户端实际运行界面，使用隔离的空白账号环境；未展示真实课程、个人账号或完成记录。
+
+### 学习通任务工作台
+
+![学习通任务工作台](docs/screenshots/chaoxing-workspace.png)
+
+### U校园工作区
+
+![U校园工作区](docs/screenshots/unipus-workspace.png)
+
+### 雨课堂工作区
+
+![雨课堂工作区](docs/screenshots/rain-workspace.png)
+
+### AI 与答题设置
+
+![AI 与答题设置](docs/screenshots/ai-settings.png)
 
 ## 下载与使用
 
@@ -15,7 +35,7 @@ Windows 桌面课程学习助手，集中管理学习通、雨课堂、智慧树
 
 更换版本前，请退出旧程序并备份同目录的配置、账号档案和浏览器档案。不要同时运行多个版本操作同一份数据，也不要把 Cookie、账号文件和配置上传到公开仓库。
 
-后续新版本将随正式发布提供 `SHA256SUMS.txt`；旧版本如未附校验文件，可参考 GitHub Release 附件的摘要。校验示例：
+1.6.30 起随正式发布提供 `SHA256SUMS.txt`；旧版本如未附校验文件，可参考 GitHub Release 附件的摘要。校验示例：
 
 ```powershell
 Get-FileHash .\leke-1.6.30-win-x64.exe -Algorithm SHA256
@@ -36,7 +56,7 @@ Get-FileHash .\leke-1.6.30-win-x64.exe -Algorithm SHA256
 
 **不承诺每所学校、每门课程或每种题型都可自动完成，也不保证成绩。** 平台显示的最终提交、批改及进度记录才是核对依据。
 
-## 1.6.30 安全加固（发布准备中）
+## 1.6.30 安全加固
 
 - 正式打包版不接受开发测试环境变量跳过乐课登录，也不能通过环境变量替换官方账号服务。
 - Windows 使用当前系统用户的 DPAPI 保护新保存的乐课登录令牌；旧明文令牌在设置下次保存时迁移。
@@ -63,7 +83,7 @@ Get-FileHash .\leke-1.6.30-win-x64.exe -Algorithm SHA256
 
 客户端的第三方声明载明：学习通核心基于 GPL-3.0 项目，U校园引擎基于 AGPL-3.0 项目。因此原 README 对整个客户端作“闭源、保留所有权利”的表述不准确，对应源码分发需遵守实际适用的上游许可。
 
-维护者正在整理与发布版本对应的客户端源码分发方式。1.6.30 已完成本地构建与验证，目前尚未发布；可下载版本以 Releases 为准。服务端源码、账号、Cookie、密钥及运行数据不在客户端源码交付范围内。
+客户端源码见 [client/](client/)，运行和构建步骤见 [SOURCE_BUILD.md](SOURCE_BUILD.md)。[1.6.30 Release](https://github.com/niuniu513-ask/leke/releases/tag/v1.6.30) 同时提供 EXE、完整对应源码包及 SHA-256 校验文件。Git 目录省略超过 100 MB 的语音模型文件，完整源码包保留该文件。服务端源码、账号、Cookie、私有密钥及运行数据不在公开交付范围内。
 
 软件还使用 PySide6、浏览器自动化、语音处理及其他第三方组件。许可证与声明随新安装包附带；第三方组件按各自许可证使用。
 

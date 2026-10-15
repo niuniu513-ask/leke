@@ -1,0 +1,12 @@
+[project]
+name = "leke"
+version = "1.6.30"
+description = "乐课 · 在线课程学习助手（多账号并行刷课、进度可视化）"
+requires-python = ">=3.13,<4.0"
+dynamic = ["dependencies"]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.setuptools.dynamic]
+dependencies = {file=["requirements.txt"]}

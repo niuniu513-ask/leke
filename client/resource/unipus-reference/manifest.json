@@ -1,0 +1,171 @@
+{
+  "repo": "https://github.com/Han-maker-wp/unipus-agent",
+  "commit": "d1b15ab24a289157dfb84cf5455084d402dd9d6e",
+  "files": [
+    {
+      "path": "knowledge/INDEX.md",
+      "bytes": 63460,
+      "sha256": "ac58e1d5e6d478b514b928836c4794625e918bde44106cc5a56674ccfcc8c22d"
+    },
+    {
+      "path": "knowledge/新未来大学英语/新未来大学英语 综合教程1.md",
+      "bytes": 72369,
+      "sha256": "2dd5eeb070449ade54584e5ee7a8ff337099b5bdb62eb1cef47271a1151c0b7c"
+    },
+    {
+      "path": "knowledge/新未来大学英语/新未来大学英语 综合教程2.md",
+      "bytes": 77710,
+      "sha256": "a10d41e5df9f77bf01b958210691320d7ad0542ded05c4f055aa1e1696efb460"
+    },
+    {
+      "path": "knowledge/新未来大学英语/新未来大学英语 综合教程3A.md",
+      "bytes": 56084,
+      "sha256": "8973e6beae5eecf757c1740b5a39ce501a1acea872dabfbb4e9375a2c03d7ba0"
+    },
+    {
+      "path": "knowledge/新未来大学英语/新未来大学英语 综合教程3B.md",
+      "bytes": 58354,
+      "sha256": "e2e869f786f947aa5229de0fac3da0251b06a5be304ced5819e0ca71d5220bcc"
+    },
+    {
+      "path": "knowledge/新标准大学英语（第三版）/新标准大学英语 综合教程1（教师用书）.md",
+      "bytes": 351797,
+      "sha256": "e496cf6714cdfcfb7670037986fd737d3e1b6a0e625c010021da6d44e90be660"
+    },
+    {
+      "path": "knowledge/新标准大学英语（第三版）/新标准大学英语 综合教程2（教师用书）.md",
+      "bytes": 389093,
+      "sha256": "9f843fe7ff1fbc617a97199c85663954c98f395c038fc597b11a2f4d7bb86160"
+    },
+    {
+      "path": "knowledge/新标准大学英语（第三版）/新标准大学英语 综合教程3（教师用书）.md",
+      "bytes": 394534,
+      "sha256": "cb00d3251132f2fc2c8cf16366e57abfbbd4367f68b66735304e4c3dd00a8540"
+    },
+    {
+      "path": "knowledge/新标准大学英语（第三版）/新标准大学英语 综合教程4（教师用书）.md",
+      "bytes": 309824,
+      "sha256": "2e8da6648cdde530be58a80d308cd797ebf0a7c0eb658406761bbd0c48b7c35c"
+    },
+    {
+      "path": "knowledge/新标准大学英语（第二版）/新标准大学英语 综合教程1.md",
+      "bytes": 21553,
+      "sha256": "5c8d364631295b8dc70cc07e3760c3fef5a80f32af062d61d337f55787ebbf6e"
+    },
+    {
+      "path": "knowledge/新标准大学英语（第二版）/新标准大学英语 综合教程2.md",
+      "bytes": 21210,
+      "sha256": "84a708506d81dc35e2ab3e8d605c3e535ebbf9efc9b2232bc394fc7224ddd4ce"
+    },
+    {
+      "path": "knowledge/新标准大学英语（第二版）/新标准大学英语 综合教程3.md",
+      "bytes": 68734,
+      "sha256": "000a4b5ffdb8becd499e27c2affece3a1bf6216c3fd28758d9d58d9a772cef8e"
+    },
+    {
+      "path": "knowledge/新编大学英语（第四版）/新编大学英语 综合教程1.md",
+      "bytes": 131363,
+      "sha256": "dd975dbd193e35ce5e81859bda3fc128951fa9368488c41f61403b6cd2d29060"
+    },
+    {
+      "path": "knowledge/新编大学英语（第四版）/新编大学英语 综合教程2.md",
+      "bytes": 110436,
+      "sha256": "eec540e5525fc93265e6fab29b76a773cac4c9ff8930009bdc18c4151e19a541"
+    },
+    {
+      "path": "knowledge/新编大学英语（第四版）/新编大学英语 综合教程3.md",
+      "bytes": 142075,
+      "sha256": "0b5160938649035610441deea28d722af8af6ef8644b93b876642540829e278b"
+    },
+    {
+      "path": "knowledge/新编大学英语（第四版）/新编大学英语 视听说教程1.md",
+      "bytes": 139981,
+      "sha256": "78ee9b2471f16b18cc44168ec0ffb3fab3292fa21c6bc3e83ec18587843cb67f"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第三版）/新视野大学英语 视听说教程1.md",
+      "bytes": 40811,
+      "sha256": "1abcf1f65f520858be16d2a384c5e372ac6ee561796bb7f9f14d4bb918657d88"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第三版）/新视野大学英语 视听说教程2.md",
+      "bytes": 56845,
+      "sha256": "c22d1e5a84e7e746bb2629ae042c47b9451209be270fef6ad670830f8968d512"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第三版）/新视野大学英语 视听说教程3.md",
+      "bytes": 52323,
+      "sha256": "9ea689fb5857380d71900db95428f8656ef425a5818c6f441ffa50720fc6e49f"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 综合训练1.md",
+      "bytes": 34949,
+      "sha256": "55233e16e78e746d0121987ca5867b5fe185d82c6ff05a802a59ee273c8c97bb"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 综合训练2.md",
+      "bytes": 38401,
+      "sha256": "dfd98c3bc9c47afbd417ca03cb3ed1cd6463d7348e6a9b7e89e193eda2a01a36"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 视听说教程1.md",
+      "bytes": 350863,
+      "sha256": "c7eea5e9a92a7819065a12d1df8b262ee0f7035bed18ad5645dc97fbe5fbddc7"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 视听说教程2.md",
+      "bytes": 328466,
+      "sha256": "6d14fba368b8a3043bd5a50e5e5bc782c9d84a514427438c662e19bf3a36d8e0"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 视听说教程3.md",
+      "bytes": 375067,
+      "sha256": "460d06b36828ef99f361a5f87dd7482b294a0620d06c6ede87fac69ad0bf53a9"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 视听说教程4.md",
+      "bytes": 638170,
+      "sha256": "03383c4247e441267685149b51fe016e1018b3702b497345bc473e0d9cdada3e"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 读写教程1.md",
+      "bytes": 67488,
+      "sha256": "736675e86914fd11a9edb34853e687ea9cc03c34d7b01fb1d94e702555736421"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 读写教程2.md",
+      "bytes": 77526,
+      "sha256": "58a172d4166cdba59cd8a77dcefd1760d10e0e441eccefc1782ac14965a014c0"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 读写教程3.md",
+      "bytes": 95308,
+      "sha256": "5197db8346a6e3d618ba6b14b242408be5c1d3a7b382c2711fd7cc8bf697a9e1"
+    },
+    {
+      "path": "knowledge/新视野大学英语（第四版）/新视野大学英语 读写教程4.md",
+      "bytes": 120515,
+      "sha256": "09e7fa48e359c751f50ccbc7802a02481d0fe513c85e2464e7141deacf0419fa"
+    },
+    {
+      "path": "knowledge/现代大学英语/现代大学英语 精读1（第三版）教师用书.md",
+      "bytes": 526318,
+      "sha256": "db3c4d7ef8849b5a819d4dde7ca3274178e1f830a22d4f307b198f1161f544bf"
+    },
+    {
+      "path": "knowledge/现代大学英语/现代大学英语 精读2（第三版）教师用书.md",
+      "bytes": 507164,
+      "sha256": "2e85cd538e732b9d2d3315e188e62496c63a1c987989dc9255562c9603dc7435"
+    },
+    {
+      "path": "knowledge/理解当代中国系列/理解当代中国 汉英翻译教程（教师用书）.md",
+      "bytes": 309258,
+      "sha256": "50f4439fe1b092d00527b0be639ae98080523857f3afda0ef81ca4546c05f482"
+    },
+    {
+      "path": "knowledge/理解当代中国系列/理解当代中国 英语读写教程（教师用书）.md",
+      "bytes": 744417,
+      "sha256": "32dddb72f46de95b7ec3470c2a64a994d8ad3cd95e73f50ab972c4d4505c205e"
+    }
+  ]
+}

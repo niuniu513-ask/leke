@@ -1,0 +1,40 @@
+# 统一换行与编码策略。
+# 源码工作副本是 LF；不声明的话，Windows 上 core.autocrlf=true 会把所有文件
+# 在下次 checkout 时改成 CRLF，产生全库噪音 diff。
+* text=auto eol=lf
+
+# 二进制资源，别当文本处理
+*.png  binary
+*.ico  binary
+*.jpg  binary
+*.jpeg binary
+*.webp binary
+*.exe  binary
+*.dll  binary
+*.zip  binary
+*.gz   binary
+*.woff binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
+
+# 明确按文本处理、且必须保持 LF 的
+*.py   text eol=lf
+*.md   text eol=lf
+*.txt  text eol=lf
+*.json text eol=lf
+*.ini  text eol=lf
+*.toml text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.html text eol=lf
+*.css  text eol=lf
+*.js   text eol=lf
+*.ts   text eol=lf
+
+# Windows 批处理必须是 CRLF
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# 让 git log/diff 认出这些是生成物
+*.spec   linguist-generated
